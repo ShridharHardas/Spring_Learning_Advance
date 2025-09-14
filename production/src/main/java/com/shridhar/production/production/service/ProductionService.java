@@ -13,4 +13,6 @@ public interface ProductionService {
 
     public ProductionDto findByID(Long id);
 
+    public ProductionDto updateByName(Long id, ProductionDto productionDto);
+
 }

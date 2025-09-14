@@ -8,6 +8,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ProductionDto {
+
+    private Long id;
     private String name;
     private String description;
 }

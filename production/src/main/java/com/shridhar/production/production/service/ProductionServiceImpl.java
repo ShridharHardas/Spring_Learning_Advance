@@ -39,4 +39,13 @@ public class ProductionServiceImpl implements ProductionService {
          Production production=productionRepo.findById(id).orElseThrow(()->new ResourceNotFoundException("Production Id was Not Found :"+id));
            return modelMapper.map(production,ProductionDto.class);
     }
+
+    @Override
+    public ProductionDto updateByName(Long id, ProductionDto productionDto) {
+        Production production=productionRepo.findById(id).orElseThrow(()->new ResourceNotFoundException("Product Id is Not Found :"+id));
+        productionDto.setId(id);
+        modelMapper.map(productionDto,production);
+        Production updatedProduct=productionRepo.save(production);
+        return modelMapper.map(updatedProduct,ProductionDto.class);
+    }
 }

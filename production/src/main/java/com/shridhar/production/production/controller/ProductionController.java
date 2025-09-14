@@ -32,5 +32,11 @@ public class ProductionController {
         return productionService.findByID(id);
     }
 
+    @PutMapping("/update/{id}")
+    public ProductionDto update(@PathVariable Long id, @RequestBody ProductionDto productionDto)
+    {
+        return productionService.updateByName(id, productionDto);
+    }
+
 
 }
