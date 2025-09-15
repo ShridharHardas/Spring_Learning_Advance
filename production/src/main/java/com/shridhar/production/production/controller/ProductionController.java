@@ -14,7 +14,7 @@ public class ProductionController {
 
     private final ProductionService productionService;
 
-    @GetMapping
+    @GetMapping("/all")
     public List<ProductionDto> findAll()
     {
         return productionService.findAll();
